@@ -1,9 +1,11 @@
-from typing import TypedDict, Annotated, List
-from langgraph.graph.message import add_messages
+from typing import Annotated, TypedDict
+
 from langchain_core.messages import BaseMessage
- 
+from langgraph.graph.message import add_messages
+
+
 class SupportState(TypedDict):
-    messages: Annotated[List[BaseMessage], add_messages]
+    messages: Annotated[list[BaseMessage], add_messages]
     intent: str
     sentiment: str
     escalate: bool

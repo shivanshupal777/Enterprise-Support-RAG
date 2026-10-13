@@ -1,8 +1,10 @@
 import os
+
+from langchain.tools.retriever import create_retriever_tool
 from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain.tools.retriever import create_retriever_tool
- 
+
+
 def get_rag_tool():
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     persist_dir = os.path.join(base_dir, "data", "vectorstore")

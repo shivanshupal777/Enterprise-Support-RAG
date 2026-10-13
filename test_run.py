@@ -1,7 +1,8 @@
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
+
 from src.graph.workflow import build_graph
- 
+
 load_dotenv()
  
 def run_test():

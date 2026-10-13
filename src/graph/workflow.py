@@ -1,14 +1,16 @@
-from langgraph.graph import StateGraph, END
+from langgraph.graph import END, StateGraph
 from langgraph.prebuilt import ToolNode
-from src.graph.state import SupportState
+
 from src.agents.support_agents import (
-    query_understanding_node,
     agent_node,
+    escalation_node,
+    query_understanding_node,
     sentiment_analysis_node,
-    escalation_node
 )
+from src.graph.state import SupportState
 from src.tools.rag_tool import get_rag_tool
- 
+
+
 def should_continue(state: SupportState):
     messages = state["messages"]
     last_message = messages[-1]

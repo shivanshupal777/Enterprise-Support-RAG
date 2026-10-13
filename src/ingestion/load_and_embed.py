@@ -1,10 +1,11 @@
 import os
+
 from dotenv import load_dotenv
 from langchain_community.document_loaders import TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
- 
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 load_dotenv()
  
 def ingest_data(file_path: str, persist_dir: str):

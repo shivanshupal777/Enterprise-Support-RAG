@@ -1,8 +1,9 @@
+
 from pydantic import BaseModel
-from typing import Optional
- 
+
+
 class QueryRequest(BaseModel):
-    session_id: Optional[str] = None
+    session_id: str | None = None
     query: str
  
 class QueryResponse(BaseModel):

@@ -1,6 +1,6 @@
-import streamlit as st
 import requests
- 
+import streamlit as st
+
 st.set_page_config(page_title="Enterprise Support Assistant", page_icon="🤖")
  
 st.title("Enterprise Support Assistant")
@@ -39,6 +39,6 @@ if prompt := st.chat_input("Type your support query here..."):
                 st.session_state.messages.append({"role": "assistant", "content": answer})
             else:
                 st.error(f"API Error: {response.status_code}")
-        except Exception as e:
+        except requests.expections.RequestException:
             st.error("Failed to connect to the backend API. Is it running?")
  

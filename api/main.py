@@ -1,9 +1,10 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from langchain_core.messages import HumanMessage
+
 from api.schemas import QueryRequest, QueryResponse
 from src.graph.workflow import build_graph
-from dotenv import load_dotenv
- 
+
 load_dotenv()
  
 app = FastAPI(title="Enterprise Support RAG API")

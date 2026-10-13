@@ -1,10 +1,10 @@
-import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
+from langchain_google_genai import ChatGoogleGenerativeAI
+
 from src.graph.state import SupportState
 from src.tools.rag_tool import get_rag_tool
- 
+
 load_dotenv()
  
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
